@@ -15,15 +15,29 @@ This model aims to estimate the qualitative attributes of large-scale passively 
 ### Components
 
 #### Dataset
-* 'Data' contains traffic crash data collected from six routes of interstate highway in California from 2006 to 2008.
-* Based on the data, safety performance function (SPF) and continuous risk profile (CRP) were estimated and saved as separate files. For more details on calculating SPF and CRP, see [Kwon et al.(2013)](http://dx.doi.org/10.1016/j.aap.2012.10.019) and [Chung et al. (2009)](https://escholarship.org/uc/item/24m8j57d)
+* 'Data' only contains pertubated and sampled smart card and travel survey data due to limited permission.
+* train/test_incomplete data indicate the smart card containing trip-chain attributes
+* train/test_complete data indicate the travel survey containing trip-chain and qualitative attributes
+* Other data is obtained from the DataPreprocessing.ipynb
 
-##### FatalCRP.R
-* Step-by-step implementation of the proposed method is provided in a single file, including data preprocessing, modeling, evaluation, and visualization
-* Refer the FatalCRP.html for a detailed description of the code  
+##### DataPreprocessing.ipynb
+* DataPreprocessing transforms the trip-chain attributes into sequential ndarray to use for Tensorflow
+* Detailed descriptions are provided in the notebook files.
+
+##### 2D-Transformer.ipynb
+* Step-by-step implementation of CGAN for mobility data fusion is provided
+* Class for Transformer, 1D-Positional, and 2D-Locational encoding are defined
+* The code include all parts in the paper: Model structure (2D-Transformer), Model training (Conditional WGAN-GP), Evaluation (Fidelity and Diversity), and Visualization
+* Pretained model with full training data is provided in the 'Py_generator'
+
+##### BERT_Embed.ipynb
+* BERT transforms categorical qualitative attributes into numeric one to use for calculating precision and recall
+* Pretained model is also provided ('MLM_Embed_indiv.h5')
+
 
 ## Notice
-* Please refer to the full paper with this code for understanding the logic behind each process
+* Full paper will be provided after the peer-review process
+* Detail logic behind the code is described in the full paper
 
 ## Authors
 
@@ -35,4 +49,7 @@ This model aims to estimate the qualitative attributes of large-scale passively 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
-* [Benchmark model](http://dx.doi.org/10.1016/j.aap.2012.10.019)
+* [WGAN-GP](https://github.com/kongyanye/cwgan-gp)
+* [Transformer](https://github.com/Lsdefine/attention-is-all-you-need-keras)
+* [Evaluation](https://github.com/clovaai/generative-evaluation-prdc)
+* [2D-locational Encoding](https://github.com/wzlxjtu/PositionalEncoding2D)
