@@ -1,4 +1,4 @@
-# Conditional Generative Adversarial Networks (CGAN) for Mobility Data Fusion
+# Imputing qualitative attributes for trip chains extracted from smart card data using a conditional generative adversarial network
 
 This code implements the paper, Kim et al. (2022). Imputing Qualitative Attributes for Trip Chains Extracted from Smart Card Data Using a Conditional Generative Adversarial Network. Transportation Research Part C. https://doi.org/10.1016/j.trc.2022.103616.
 
